@@ -1,4 +1,7 @@
 <?xml version="1.0" ?>
+<xsl:variable name="leg_width" select="0.1" />
+<xsl:variable name="leg_length" select="1" />
+
 <robot name="hopper">
   <link name="head">
     <inertial>
@@ -6,72 +9,67 @@
       <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100"/>
     </inertial>
     <collision name="head_collision">
-      <origin xyz="0 0 3.2">
       <geometry>
         <box size="1 1 1"/>
       </geometry>
     </collision>
     <visual name="head_visual">
-      <origin xyz="0 0 3.2">
       <geometry>
         <box size="1 1 1"/>
       </geometry>
     </visual>
   </link>
+
   <link name="leg1">
     <inertial>
       <mass value="10"/>
       <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
     </inertial>
     <collision name="leg1_collision">
-      <origin xyz="0 0 2.0">
       <geometry>
-        <cylinder radius="0.1" length="1"/>
+        <cylinder radius="$leg_width" length="$leg_length"/>
       </geometry>
     </collision>
     <visual name="leg1_visual">
-      <origin xyz="0 0 2.0">
       <geometry>
-        <cylinder radius="0.1" length="1"/>
+        <cylinder radius="$leg_width" length="$leg_length"/>
       </geometry>
     </visual>
   </link>
-  <link name="leg2">
-    <inertial>
-      <mass value="10"/>
-      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
-    </inertial>
-    <collision name="leg2_collision">
-      <origin xyz="0 0 0.8">
-      <geometry>
-        <cylinder radius="0.1" length="1"/>
-      </geometry>
-    </collision>
-    <visual name="leg2_visual">
-      <origin xyz="0 0 0.8">
-      <geometry>
-        <cylinder radius="0.1" length="1"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <joint name="hip_joint" type="">
-  <joint/>
   <link name="hip">
     <inertial>
       <mass value="1"/>
       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
     </inertial>
     <collision name="hip_collision">
-      <origin xyz="0 0 2.6">
       <geometry>
-        <sphere radius="0.1"/>
+        <sphere radius="$leg_width"/>
       </geometry>
     </collision>
     <visual name="hip_visual">
-      <origin xyz="0 0 2.6">
       <geometry>
-        <sphere radius="0.1"/>
+        <sphere radius="$leg_width"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="leg1_hip_joint" type="fixed">
+    <parent link="leg1"/>
+    <child link="hip"/>
+  </joint>
+
+  <link name="leg2">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
+    </inertial>
+    <collision name="leg2_collision">
+      <geometry>
+        <cylinder radius="$leg_width" length="$leg_length"/>
+      </geometry>
+    </collision>
+    <visual name="leg2_visual">
+      <geometry>
+        <cylinder radius="$leg_width" length="$leg_length"/>
       </geometry>
     </visual>
   </link>
@@ -81,15 +79,34 @@
       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
     </inertial>
     <collision name="knee_collision">
-      <origin xyz="0 0 1.4">
       <geometry>
-        <sphere radius="0.1"/>
+        <sphere radius="$leg_width"/>
       </geometry>
     </collision>
     <visual name="knee_visual">
-      <origin xyz="0 0 1.4">
       <geometry>
-        <sphere radius="0.1"/>
+        <sphere radius="$leg_width"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="leg2_knee_joint" type="fixed">
+    <parent link="leg2"/>
+    <child link="knee"/>
+  </joint>
+  
+  <link name="foot">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <collision name="foot_collision">
+      <geometry>
+        <box size="0.5 0.5 0.1"/>
+      </geometry>
+    </collision>
+    <visual name="foot_visual">
+      <geometry>
+        <box size="0.5 0.5 0.1"/>
       </geometry>
     </visual>
   </link>
@@ -99,16 +116,51 @@
       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
     </inertial>
     <collision name="ankle_collision">
-      <origin xyz="0 0 0.2">
       <geometry>
-        <sphere radius="0.1"/>
+        <sphere radius="$leg_width"/>
       </geometry>
     </collision>
     <visual name="ankle_visual">
-      <origin xyz="0 0 0.2">
       <geometry>
-        <sphere radius="0.1"/>
+        <sphere radius="$leg_width"/>
       </geometry>
     </visual>
   </link>
+  <joint name="foot_ankle_joint" type="fixed">
+    <parent link="foot"/>
+    <child link="ankle"/>
+  </joint>
+
+  <joint name="head_leg1_joint1" type="revolute">
+    <parent link="head"/>
+    <child link="hip"/>
+    <limit lower="-0.78539" upper="0.78539" effort=30 velocity=30>
+    <axis xyz="1 0 0">
+  </joint>
+  <joint name="head_leg1_joint2" type="revolute">
+    <parent link="head"/>
+    <child link="hip"/>
+    <limit lower="-0.78539" upper="0.78539" effort=30 velocity=30>
+    <axis xyz="0 0 1">
+  </joint>
+
+  <joint name="leg1_leg2_joint" type="revolute">
+    <parent link="leg1"/>
+    <child link="knee"/>
+    <limit lower="-0.78539" upper="0.78539" effort=30 velocity=30>
+    <axis xyz="1 0 0">
+  </joint>
+
+   <joint name="leg2_foot_joint" type="revolute">
+    <parent link="leg2"/>
+    <child link="ankle"/>
+    <limit lower="-0.78539" upper="0.78539" effort=30 velocity=30>
+    <axis xyz="1 0 0">
+  </joint>
+  <joint name="leg2_foot_joint" type="revolute">
+    <parent link="leg2"/>
+    <child link="ankle"/>
+    <limit lower="-0.78539" upper="0.78539" effort=30 velocity=30>
+    <axis xyz="0 0 1">
+  </joint>
 </robot>
