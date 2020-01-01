@@ -149,13 +149,13 @@
     <axis xyz="1 0 0"/>
   </joint>
 
-  <joint name="leg2_foot_joint" type="revolute">
+  <joint name="leg2_foot_joint1" type="revolute">
     <parent link="leg2"/>
     <child link="ankle"/>
     <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30"/>
     <axis xyz="1 0 0"/>
   </joint>
-  <joint name="leg2_foot_joint" type="revolute">
+  <joint name="leg2_foot_joint2" type="revolute">
     <parent link="leg2"/>
     <child link="ankle"/>
     <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30"/>
