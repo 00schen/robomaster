@@ -51,8 +51,8 @@
     </visual>
   </link>
   <joint name="leg1_hip_joint" type="fixed">
-    <parent link="leg1"/>
-    <child link="hip"/>
+    <parent link="hip"/>
+    <child link="leg1"/>
   </joint>
 
   <link name="leg2">
@@ -88,8 +88,8 @@
     </visual>
   </link>
   <joint name="leg2_knee_joint" type="fixed">
-    <parent link="leg2"/>
-    <child link="knee"/>
+    <parent link="knee"/>
+    <child link="leg2"/>
   </joint>
   
   <!-- <link name="foot">
