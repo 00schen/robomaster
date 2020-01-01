@@ -1,6 +1,4 @@
 <?xml version="1.0" ?>
-<xsl:variable name="leg_width" select="0.1" />
-<xsl:variable name="leg_length" select="1" />
 
 <robot name="hopper">
   <link name="head">
@@ -27,12 +25,12 @@
     </inertial>
     <collision name="leg1_collision">
       <geometry>
-        <cylinder radius="$leg_width" length="$leg_length"/>
+        <cylinder radius="0.1" length="1"/>
       </geometry>
     </collision>
     <visual name="leg1_visual">
       <geometry>
-        <cylinder radius="$leg_width" length="$leg_length"/>
+        <cylinder radius="0.1" length="1"/>
       </geometry>
     </visual>
   </link>
@@ -43,12 +41,12 @@
     </inertial>
     <collision name="hip_collision">
       <geometry>
-        <sphere radius="$leg_width"/>
+        <sphere radius="0.1"/>
       </geometry>
     </collision>
     <visual name="hip_visual">
       <geometry>
-        <sphere radius="$leg_width"/>
+        <sphere radius="0.1"/>
       </geometry>
     </visual>
   </link>
@@ -64,12 +62,12 @@
     </inertial>
     <collision name="leg2_collision">
       <geometry>
-        <cylinder radius="$leg_width" length="$leg_length"/>
+        <cylinder radius="0.1" length="1"/>
       </geometry>
     </collision>
     <visual name="leg2_visual">
       <geometry>
-        <cylinder radius="$leg_width" length="$leg_length"/>
+        <cylinder radius="0.1" length="1"/>
       </geometry>
     </visual>
   </link>
@@ -80,12 +78,12 @@
     </inertial>
     <collision name="knee_collision">
       <geometry>
-        <sphere radius="$leg_width"/>
+        <sphere radius="0.1"/>
       </geometry>
     </collision>
     <visual name="knee_visual">
       <geometry>
-        <sphere radius="$leg_width"/>
+        <sphere radius="0.1"/>
       </geometry>
     </visual>
   </link>
@@ -117,12 +115,12 @@
     </inertial>
     <collision name="ankle_collision">
       <geometry>
-        <sphere radius="$leg_width"/>
+        <sphere radius="0.1"/>
       </geometry>
     </collision>
     <visual name="ankle_visual">
       <geometry>
-        <sphere radius="$leg_width"/>
+        <sphere radius="0.1"/>
       </geometry>
     </visual>
   </link>
