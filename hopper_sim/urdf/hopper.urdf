@@ -108,7 +108,7 @@
       </geometry>
     </visual>
   </link>
-  <!-- <link name="ankle">
+  <link name="ankle">
     <inertial>
       <mass value="1"/>
       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
@@ -142,7 +142,7 @@
     <axis xyz="0 0 1">
   </joint>
 
-  <joint name="leg1_leg2_joint" type="revolute">
+  <!-- <joint name="leg1_leg2_joint" type="revolute">
     <parent link="leg1"/>
     <child link="knee"/>
     <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30">
