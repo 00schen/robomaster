@@ -1,0 +1,53 @@
+digraph G {
+node [shape=box];
+"head" [label="head"];
+"hip" [label="hip"];
+"leg1" [label="leg1"];
+"knee" [label="knee"];
+"leg2" [label="leg2"];
+"ankle" [label="ankle"];
+"foot" [label="foot"];
+"ankle" [label="ankle"];
+"foot" [label="foot"];
+"hip" [label="hip"];
+"leg1" [label="leg1"];
+"knee" [label="knee"];
+"leg2" [label="leg2"];
+"ankle" [label="ankle"];
+"foot" [label="foot"];
+"ankle" [label="ankle"];
+"foot" [label="foot"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"head" -> "head_leg1_joint2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"head_leg1_joint2" -> "hip"
+"hip" -> "leg1_hip_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg1_hip_joint" -> "leg1"
+"leg1" -> "leg1_leg2_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg1_leg2_joint" -> "knee"
+"knee" -> "leg2_knee_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg2_knee_joint" -> "leg2"
+"leg2" -> "leg2_foot_joint2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg2_foot_joint2" -> "ankle"
+"ankle" -> "foot_ankle_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"foot_ankle_joint" -> "foot"
+"leg2" -> "leg2_foot_joint2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg2_foot_joint2" -> "ankle"
+"ankle" -> "foot_ankle_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"foot_ankle_joint" -> "foot"
+"head" -> "head_leg1_joint2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"head_leg1_joint2" -> "hip"
+"hip" -> "leg1_hip_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg1_hip_joint" -> "leg1"
+"leg1" -> "leg1_leg2_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg1_leg2_joint" -> "knee"
+"knee" -> "leg2_knee_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg2_knee_joint" -> "leg2"
+"leg2" -> "leg2_foot_joint2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg2_foot_joint2" -> "ankle"
+"ankle" -> "foot_ankle_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"foot_ankle_joint" -> "foot"
+"leg2" -> "leg2_foot_joint2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"leg2_foot_joint2" -> "ankle"
+"ankle" -> "foot_ankle_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"foot_ankle_joint" -> "foot"
+}
