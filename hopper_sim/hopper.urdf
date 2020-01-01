@@ -55,7 +55,7 @@
     <child link="hip"/>
   </joint>
 
-  <link name="leg2">
+  <!-- <link name="leg2">
     <inertial>
       <mass value="10"/>
       <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10"/>
@@ -90,7 +90,7 @@
   <joint name="leg2_knee_joint" type="fixed">
     <parent link="leg2"/>
     <child link="knee"/>
-  </joint>
+  </joint> -->
   
   <!-- <link name="foot">
     <inertial>
