@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 
-<robot name="hopper">
+<!-- <robot name="hopper">
   <!-- <link name="head">
     <inertial>
       <mass value="100"/>
@@ -161,4 +161,4 @@
     <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30">
     <axis xyz="0 0 1">
   </joint> -->
-</robot>
+</robot> -->
