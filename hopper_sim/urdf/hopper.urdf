@@ -129,36 +129,36 @@
     <child link="ankle"/>
   </joint>
 
-  <!-- <joint name="head_leg1_joint1" type="revolute">
+  <joint name="head_leg1_joint1" type="revolute">
     <parent link="head"/>
     <child link="hip"/>
-    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30">
-    <axis xyz="1 0 0">
+    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <joint name="head_leg1_joint2" type="revolute">
     <parent link="head"/>
     <child link="hip"/>
-    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30">
-    <axis xyz="0 0 1">
+    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30"/>
+    <axis xyz="0 0 1"/>
   </joint>
 
   <joint name="leg1_leg2_joint" type="revolute">
     <parent link="leg1"/>
     <child link="knee"/>
-    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30">
-    <axis xyz="1 0 0">
+    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30"/>
+    <axis xyz="1 0 0"/>
   </joint>
 
   <joint name="leg2_foot_joint" type="revolute">
     <parent link="leg2"/>
     <child link="ankle"/>
-    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30">
-    <axis xyz="1 0 0">
+    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <joint name="leg2_foot_joint" type="revolute">
     <parent link="leg2"/>
     <child link="ankle"/>
-    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30">
-    <axis xyz="0 0 1">
-  </joint> -->
+    <limit lower="-0.78539" upper="0.78539" effort="30" velocity="30"/>
+    <axis xyz="0 0 1"/>
+  </joint>
 </robot>
