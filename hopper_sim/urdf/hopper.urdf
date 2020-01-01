@@ -125,8 +125,8 @@
     </visual>
   </link>
   <joint name="foot_ankle_joint" type="fixed">
-    <parent link="foot"/>
-    <child link="ankle"/>
+    <parent link="ankle"/>
+    <child link="foot"/>
   </joint>
 
   <joint name="head_leg1_joint1" type="revolute">
